@@ -1,6 +1,7 @@
 using System;
 using Xunit;
-using Moq;
+using FigureArea.Base;
+using FigureArea.Figures;
 
 
 namespace FigureArea.Tests

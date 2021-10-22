@@ -1,6 +1,7 @@
 ﻿using System;
+using FigureArea.Base;
 
-namespace FigureArea
+namespace FigureArea.Figures
 {
     public class Triangle : IFigure
     {
