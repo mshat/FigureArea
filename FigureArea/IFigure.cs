@@ -16,7 +16,7 @@ namespace FigureArea
         { }
     }
 
-    abstract public class Figure
+    public interface IFigure
     {
         public abstract double CalculateArea();
     }

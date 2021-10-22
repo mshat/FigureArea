@@ -2,7 +2,7 @@
 
 namespace FigureArea
 {
-    public class Circle : Figure
+    public class Circle : IFigure
     {
         public double radius { get; }
         public Circle(double radius)
@@ -15,7 +15,7 @@ namespace FigureArea
             this.radius = radius;      
         }
 
-        public override double CalculateArea()
+        public double CalculateArea()
         {
             double area = Math.PI * Math.Pow(radius, 2);
             return area;

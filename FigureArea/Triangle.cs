@@ -2,7 +2,7 @@
 
 namespace FigureArea
 {
-    public class Triangle : Figure
+    public class Triangle : IFigure
     {
         private FigureSide _sideA;
         public double SideA
@@ -81,7 +81,7 @@ namespace FigureArea
         {
             return SideA + SideB + SideC;
         }
-        public override double CalculateArea()
+        public double CalculateArea()
         {
             double semiperimeter = Perimeter() / 2;
             double area = Math.Sqrt(semiperimeter * (semiperimeter - SideA) * (semiperimeter - SideB) * (semiperimeter - SideC));

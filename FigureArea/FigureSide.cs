@@ -9,7 +9,7 @@ namespace FigureArea
         { }
     }
 
-    internal class FigureSide
+    class FigureSide
     {
         protected double _length;
         public double Length
