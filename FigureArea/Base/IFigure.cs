@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace FigureArea
+namespace FigureArea.Base
 {
     public class FigureConstructorException : Exception
     {

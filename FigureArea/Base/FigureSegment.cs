@@ -1,7 +1,7 @@
 ﻿using System;
 
 
-namespace FigureArea
+namespace FigureArea.Base
 {
     public class FigureSegmentException : Exception
     {
