@@ -1,4 +1,5 @@
 using System;
+using System.Reflection;
 using Xunit;
 using FigureArea.Base;
 using FigureArea.Figures;
@@ -6,12 +7,17 @@ using FigureArea.Figures;
 
 namespace FigureArea.Tests
 {
-    public class FigureSideTests
+    class FigureSegmentSubclass : FigureSegment
+    {
+        public FigureSegmentSubclass(double length) : base(length) { }
+    }
+
+    public class FigureSegmentTests
     {
         [Fact]
-        public void FigureSide_CreatingFigureSide_ReturnObject()
+        public void FigureSegment_Creating_ReturnObject()
         {
-            var side = new FigureSide(1.5);
+            var side = new FigureSegmentSubclass(1.5);
 
             Assert.NotNull(side);
             Assert.Equal(1.5, side.Length);
@@ -20,12 +26,89 @@ namespace FigureArea.Tests
         [Theory]
         [InlineData(0)]
         [InlineData(-0.1)]
-        public void FigureSide_FigureSideWithUnacceptableLenght_ReturnException(double length)
+        public void FigureSegment_FigureSideWithUnacceptableLenght_ReturnException(double length)
         {
-            Action act = () => new FigureSide(length);
+            Action act = () => new FigureSegmentSubclass(length);
 
-            Exception exception = Assert.Throws<FigureSideException>(act);
-            Assert.Equal("Side length cannot be less than or equal to zero!", exception.Message);
+            Exception exception = Assert.Throws<FigureSegmentException>(act);
+            Assert.Equal("Length cannot be less than or equal to zero!", exception.Message);
+        }
+
+        [Theory]
+        [InlineData(-1)]
+        [InlineData(0)]
+        public void FigureSegment_SetUnacceptableLenght_ReturnFalse(double length)
+        {
+            var figureSegment = new FigureSegmentSubclass(1);
+
+            Action act = () => figureSegment.Length = length;
+
+            Exception exception = Assert.Throws<FigureSegmentException>(act);
+            Assert.Equal("Length cannot be less than or equal to zero!", exception.Message);
+        }
+    }
+
+    public class FigureSideTests
+    {
+        protected void InvokeCheckLength(double length)
+        {
+            FigureSide obj = new FigureSide(1);
+            Type t = typeof(FigureSide);
+
+            t.InvokeMember(
+                "CheckLength",
+                BindingFlags.InvokeMethod | BindingFlags.Instance | BindingFlags.NonPublic,
+                null,
+                obj,
+                new object[] { length });
+        }
+
+        [Fact]
+        public void FigureSide_CheckLengthRight_ReturnException()
+        {
+            Action act = () => InvokeCheckLength(-1);
+
+            Exception exception = Assert.Throws<System.Reflection.TargetInvocationException>(act);
+            Assert.Equal("Side length cannot be less than or equal to zero!", exception.InnerException.Message);
+        }
+
+        [Fact]
+        public void FigureSide_CheckLengthRight_ReturnNull()
+        {
+            var ex = Record.Exception(() => InvokeCheckLength(1));
+            Assert.Null(ex);
+        }
+    }
+
+    public class RadiusTests
+    {
+        protected void InvokeCheckLength(double length)
+        {
+            Radius obj = new Radius(1);
+            Type t = typeof(Radius);
+
+            t.InvokeMember(
+                "CheckLength",
+                BindingFlags.InvokeMethod | BindingFlags.Instance | BindingFlags.NonPublic,
+                null,
+                obj,
+                new object[] { length });
+        }
+
+        [Fact]
+        public void FigureSide_CheckLengthRight_ReturnException()
+        {
+            Action act = () => InvokeCheckLength(-1);
+
+            Exception exception = Assert.Throws<System.Reflection.TargetInvocationException>(act);
+            Assert.Equal("Radius length cannot be less than or equal to zero!", exception.InnerException.Message);
+        }
+
+        [Fact]
+        public void FigureSide_CheckLengthRight_ReturnNull()
+        {
+            var ex = Record.Exception(() => InvokeCheckLength(1));
+            Assert.Null(ex);
         }
     }
 
