@@ -1,6 +1,5 @@
 ﻿using System;
 
-
 namespace FigureArea.Base
 {
     public class FigureSegmentException : Exception
@@ -8,46 +7,6 @@ namespace FigureArea.Base
         public FigureSegmentException(string message)
             : base(message)
         { }
-    }
-
-    public class RadiusException : FigureSegmentException
-    {
-        public RadiusException(string message)
-            : base(message)
-        { }
-    }
-
-    class Radius: FigureSegment
-    {
-        public Radius(double length) : base(length) { }
-
-        protected override void CheckLength(double length)
-        {
-            if (length < 0)
-            {
-                throw new RadiusException("Side length cannot be less than or equal to zero!");
-            }
-        }
-    }
-
-    public class FigureSideException : FigureSegmentException
-    {
-        public FigureSideException(string message)
-            : base(message)
-        { }
-    }
-
-    class FigureSide : FigureSegment
-    {
-        public FigureSide(double length) : base(length) { }
-
-        protected override void CheckLength(double length)
-        {
-            if (length <= 0)
-            {
-                throw new FigureSideException("Side length cannot be less than or equal to zero!");
-            }
-        }
     }
 
     abstract class FigureSegment
@@ -68,7 +27,7 @@ namespace FigureArea.Base
         {
             if (length <= 0)
             {
-                throw new FigureSideException("Side length cannot be less than or equal to zero!");
+                throw new FigureSegmentException("Length cannot be less than or equal to zero!");
             }
         }
 
