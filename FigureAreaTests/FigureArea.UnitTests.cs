@@ -150,7 +150,7 @@ namespace FigureArea.Tests
             var circle = new Circle(1);
 
             Assert.NotNull(circle);
-            Assert.Equal(1, circle.radius);
+            Assert.Equal(1, circle.Radius);
         }
 
         [Fact]

@@ -4,20 +4,32 @@ namespace FigureArea
 {
     public class Circle : IFigure
     {
-        public double radius { get; }
-        public Circle(double radius)
+        private Radius _radius;
+        public double Radius
         {
-            if (radius < 0)
+            get { return _radius.Length; }
+
+            set
+            {
+                _radius.Length = value;
+            }
+        }
+
+        public Circle(double length)
+        {
+            try
+            {
+                _radius = new Radius(length);
+            }
+            catch (RadiusException)
             {
                 throw new FigureConstructorException("Circle with these radius does not exist");
-            }
-
-            this.radius = radius;      
+            }   
         }
 
         public double CalculateArea()
         {
-            double area = Math.PI * Math.Pow(radius, 2);
+            double area = Math.PI * Math.Pow(Radius, 2);
             return area;
         }     
     }

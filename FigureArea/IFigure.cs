@@ -2,14 +2,7 @@
 
 namespace FigureArea
 {
-    public class FigureException : Exception
-    {
-        public FigureException(string message)
-            : base(message)
-        { }
-    }
-
-    public class FigureConstructorException : FigureException
+    public class FigureConstructorException : Exception
     {
         public FigureConstructorException(string message)
             : base(message)
