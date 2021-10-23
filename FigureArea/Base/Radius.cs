@@ -1,7 +1,7 @@
 ﻿using System;
 using FigureArea.Base;
 
-namespace FigureArea.Figures
+namespace FigureArea.Base
 {
     public class RadiusException : FigureSegmentException
     {
