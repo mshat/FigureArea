@@ -25,7 +25,7 @@
 Проверка на правильность треугольника реализована методом CheckRightTriangle класса Triangle.
 
 Диаграмма классов:
-<code>![Диаграмма классов](https://github.com/mshat/FigureArea/blob/master/ClassDiagram.png)</code>
+<code>![Диаграмма классов](https://github.com/mshat/FigureArea/blob/master/FigureAreaDiagram.png)</code>
 ### Вопрос 3
 
 
