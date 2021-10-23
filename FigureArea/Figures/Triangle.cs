@@ -4,42 +4,42 @@ using System.Collections.Generic;
 
 namespace FigureArea.Figures
 {
-    class Triangle : Polygon, IFigure
+    public class Triangle : Polygon, IFigure
     {
-        public double SideA
+        public double SideALength
         {
             get { return _sides[0].Length; }
 
             set { _sides[0].Length = value; }
         }
 
-        public double SideB
+        public double SideBLength
         {
             get { return _sides[1].Length; }
 
             set { _sides[1].Length = value; }
         }
 
-        public double SideC
+        public double SideCLength
         {
             get { return _sides[2].Length; }
 
             set { _sides[2].Length = value; }
         }
 
-        public Triangle(double sideA, double sideB, double sideC)
+        public Triangle(double sideALength, double sideBLength, double sideCLength)
         {
             try
             {
                 _sides = new List<FigureSide> 
-                { new FigureSide(sideA), new FigureSide(sideB), new FigureSide(sideC) };
+                { new FigureSide(sideALength), new FigureSide(sideBLength), new FigureSide(sideCLength) };
             }
             catch (FigureSideException)
             {
                 throw new FigureConstructorException("One or more sides of the triangle <= 0!");
             }
 
-            if (sideA + sideB <= sideC || sideA + sideC <= sideB || sideB + sideC <= sideA)
+            if (SideALength + SideBLength <= SideCLength || SideALength + SideCLength <= SideBLength || SideBLength + SideCLength <= SideALength)
             {
                 throw new FigureConstructorException("Triangle with these sides cannot exist!");
             }
@@ -47,9 +47,9 @@ namespace FigureArea.Figures
 
         public bool CheckRightTriangle()
         {
-            double sideASqr = Math.Pow(SideA, 2);
-            double sideBSqr = Math.Pow(SideB, 2);
-            double sideCSqr = Math.Pow(SideC, 2);
+            double sideASqr = Math.Pow(SideALength, 2);
+            double sideBSqr = Math.Pow(SideBLength, 2);
+            double sideCSqr = Math.Pow(SideCLength, 2);
 
             double sigCosA = sideBSqr + sideCSqr - sideASqr;
             double sigCosB = sideCSqr + sideASqr - sideBSqr;
@@ -68,7 +68,7 @@ namespace FigureArea.Figures
         public double CalculateArea()
         {
             double semiperimeter = Perimeter() / 2;
-            double area = Math.Sqrt(semiperimeter * (semiperimeter - SideA) * (semiperimeter - SideB) * (semiperimeter - SideC));
+            double area = Math.Sqrt(semiperimeter * (semiperimeter - SideALength) * (semiperimeter - SideBLength) * (semiperimeter - SideCLength));
             return area;
         }
     }

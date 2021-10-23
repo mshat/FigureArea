@@ -13,9 +13,9 @@ namespace FigureArea.Tests.UnitTests
         {
             var triangle = new Triangle(0.1, 0.1, 0.1);
             Assert.NotNull(triangle);
-            Assert.Equal(0.1, triangle.SideA);
-            Assert.Equal(0.1, triangle.SideB);
-            Assert.Equal(0.1, triangle.SideC);
+            Assert.Equal(0.1, triangle.SideALength);
+            Assert.Equal(0.1, triangle.SideBLength);
+            Assert.Equal(0.1, triangle.SideCLength);
         }
 
         [Theory]
@@ -52,7 +52,7 @@ namespace FigureArea.Tests.UnitTests
         {
             var triangle = new Triangle(1, 1, 1);
 
-            Action act = () => triangle.SideA = sideA;
+            Action act = () => triangle.SideALength = sideA;
 
             Exception exception = Assert.Throws<FigureSideException>(act);
             Assert.Equal("Side length cannot be less than or equal to zero!", exception.Message);
@@ -65,7 +65,7 @@ namespace FigureArea.Tests.UnitTests
         {
             var triangle = new Triangle(1, 1, 1);
 
-            Action act = () => triangle.SideB = sideB;
+            Action act = () => triangle.SideBLength = sideB;
 
             Exception exception = Assert.Throws<FigureSideException>(act);
             Assert.Equal("Side length cannot be less than or equal to zero!", exception.Message);
@@ -78,7 +78,7 @@ namespace FigureArea.Tests.UnitTests
         {
             var triangle = new Triangle(1, 1, 1);
 
-            Action act = () => triangle.SideC = sideC;
+            Action act = () => triangle.SideCLength = sideC;
 
             Exception exception = Assert.Throws<FigureSideException>(act);
             Assert.Equal("Side length cannot be less than or equal to zero!", exception.Message);
