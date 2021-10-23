@@ -5,7 +5,7 @@ using FigureArea.Base;
 
 namespace FigureArea.Tests.UnitTests
 {
-    class FigureSegmentSubclass : FigureSegment
+    class FigureSegmentSubclass : LineSegment
     {
         public FigureSegmentSubclass(double length) : base(length) { }
     }
@@ -28,7 +28,7 @@ namespace FigureArea.Tests.UnitTests
         {
             Action act = () => new FigureSegmentSubclass(length);
 
-            Exception exception = Assert.Throws<FigureSegmentException>(act);
+            Exception exception = Assert.Throws<LineSegmentException>(act);
             Assert.Equal("Length cannot be less than or equal to zero!", exception.Message);
         }
 
@@ -41,7 +41,7 @@ namespace FigureArea.Tests.UnitTests
 
             Action act = () => figureSegment.Length = length;
 
-            Exception exception = Assert.Throws<FigureSegmentException>(act);
+            Exception exception = Assert.Throws<LineSegmentException>(act);
             Assert.Equal("Length cannot be less than or equal to zero!", exception.Message);
         }
     }

@@ -1,0 +1,165 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FigureArea</name>
+    </assembly>
+    <members>
+        <member name="T:FigureArea.Base.FigureSideException">
+            <summary>
+            Сlass for FigureSide exceptions
+            </summary>
+        </member>
+        <member name="M:FigureArea.Base.FigureSideException.#ctor(System.String)">
+            <param name="message">The message that describes the error.</param>
+        </member>
+        <member name="T:FigureArea.Base.FigureSide">
+            <summary>
+            Сlass that represents the side of a geometric figure. For example, the side of a triangle.
+            </summary>
+        </member>
+        <member name="M:FigureArea.Base.FigureSide.#ctor(System.Double)">
+            <param name="length">Length of figure side.</param>
+        </member>
+        <member name="M:FigureArea.Base.FigureSide.CheckLength(System.Double)">
+            <summary>
+            Checks if the length is a natural number
+            </summary>
+            <param name="length">Length of line segment</param>
+        </member>
+        <member name="T:FigureArea.Base.FigureConstructorException">
+            <summary>
+            Сlass for exceptions that occur when creating a figure object.
+            </summary>
+        </member>
+        <member name="M:FigureArea.Base.FigureConstructorException.#ctor(System.String)">
+            <param name="message">The message that describes the error.</param>
+        </member>
+        <member name="T:FigureArea.Base.IFigure">
+            <summary>
+            Interface for geometric shapes with an area
+            </summary>
+        </member>
+        <member name="M:FigureArea.Base.IFigure.CalculateArea">
+            <summary>
+            Calculates the area of the figure
+            </summary>
+            <returns>Figure area</returns>
+        </member>
+        <member name="T:FigureArea.Base.LineSegmentException">
+            <summary>
+            Сlass for LineSegment exceptions
+            </summary>
+        </member>
+        <member name="M:FigureArea.Base.LineSegmentException.#ctor(System.String)">
+            <param name="message">The message that describes the error.</param>
+        </member>
+        <member name="T:FigureArea.Base.LineSegment">
+            <summary>
+            Abstract class that represents geometric line segment. Can be used to construct geometric shapes.
+            </summary>
+        </member>
+        <member name="F:FigureArea.Base.LineSegment._length">
+            <summary>
+            length of line segment.
+            </summary>
+        </member>
+        <member name="P:FigureArea.Base.LineSegment.Length">
+            <value>Property <c>length</c> represents length of line segment.</value>
+        </member>
+        <member name="M:FigureArea.Base.LineSegment.CheckLength(System.Double)">
+            <summary>
+            Checks if the length is a natural number
+            </summary>
+            <param name="length">Length of line segment</param>
+        </member>
+        <member name="M:FigureArea.Base.LineSegment.#ctor(System.Double)">
+            <param name="length">length of line segment</param>
+        </member>
+        <member name="T:FigureArea.Base.Polygon">
+            <summary>
+            Abstract class that represents geometric polygone. 
+            </summary>
+        </member>
+        <member name="F:FigureArea.Base.Polygon._epsilon">
+            <summary>
+            Accuracy for mathematical comparisons.
+            </summary>
+        </member>
+        <member name="F:FigureArea.Base.Polygon._sides">
+            <summary>
+            List of polygon sides
+            </summary>
+        </member>
+        <member name="P:FigureArea.Base.Polygon.Sides">
+            <value>Property <c>Sides</c> polygon sides.</value>
+        </member>
+        <member name="M:FigureArea.Base.Polygon.Perimeter">
+            <summary>
+            Calculates the perimeter of the polygon
+            </summary>
+            <returns>Polygon perimeter</returns>
+        </member>
+        <member name="T:FigureArea.Base.RadiusException">
+            <summary>
+            Сlass for Radius exceptions
+            </summary>
+        </member>
+        <member name="M:FigureArea.Base.RadiusException.#ctor(System.String)">
+            <param name="message">The message that describes the error.</param>
+        </member>
+        <member name="M:FigureArea.Base.Radius.CheckLength(System.Double)">
+            <summary>
+            Checks if the length is a natural number or zero
+            </summary>
+            <param name="length">Length of line segment</param>
+        </member>
+        <member name="T:FigureArea.Figures.Circle">
+            <summary>
+            Class that represents a circle geometric figure. 
+            </summary>
+        </member>
+        <member name="P:FigureArea.Figures.Circle.Radius">
+            <value>Property <c>Radius</c> represents circle radius.</value>
+        </member>
+        <member name="M:FigureArea.Figures.Circle.#ctor(System.Double)">
+            <param name="radius">Circle radius</param>
+        </member>
+        <member name="M:FigureArea.Figures.Circle.CalculateArea">
+            <summary>
+            Calculates the area of the circle
+            </summary>
+            <returns>Circle area</returns>
+        </member>
+        <member name="T:FigureArea.Figures.Triangle">
+            <summary>
+            Class that represents a triangle geometric figure. 
+            </summary>
+        </member>
+        <member name="P:FigureArea.Figures.Triangle.SideALength">
+            <value>Property <c>SideALength</c> represents length of 1st triangle side.</value>
+        </member>
+        <member name="P:FigureArea.Figures.Triangle.SideBLength">
+            <value>Property <c>SideBLength</c> represents length of 2nd triangle side.</value>
+        </member>
+        <member name="P:FigureArea.Figures.Triangle.SideCLength">
+            <value>Property <c>SideCLength</c> represents length of 3rd triangle side.</value>
+        </member>
+        <member name="M:FigureArea.Figures.Triangle.#ctor(System.Double,System.Double,System.Double)">
+            <param name="sideALength">Length of 1st triangle side</param>
+            <param name="sideBLength">Length of 2nd triangle side</param>
+            <param name="sideCLength">Length of 3rd triangle side</param>
+        </member>
+        <member name="M:FigureArea.Figures.Triangle.CheckRightTriangle">
+            <summary>
+            Check the rightness of a triangle
+            </summary>
+            <returns>True if triangle is right and false else</returns>
+        </member>
+        <member name="M:FigureArea.Figures.Triangle.CalculateArea">
+            <summary>
+            Calculates the area of the triangle
+            </summary>
+            <returns>Triangle area</returns>
+        </member>
+    </members>
+</doc>

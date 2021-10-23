@@ -4,8 +4,12 @@ using System.Collections.Generic;
 
 namespace FigureArea.Figures
 {
+    /// <summary>
+    /// Class that represents a triangle geometric figure. 
+    /// </summary>
     public class Triangle : Polygon, IFigure
     {
+        /// <value>Property <c>SideALength</c> represents length of 1st triangle side.</value>
         public double SideALength
         {
             get { return _sides[0].Length; }
@@ -13,6 +17,7 @@ namespace FigureArea.Figures
             set { _sides[0].Length = value; }
         }
 
+        /// <value>Property <c>SideBLength</c> represents length of 2nd triangle side.</value>
         public double SideBLength
         {
             get { return _sides[1].Length; }
@@ -20,6 +25,7 @@ namespace FigureArea.Figures
             set { _sides[1].Length = value; }
         }
 
+        /// <value>Property <c>SideCLength</c> represents length of 3rd triangle side.</value>
         public double SideCLength
         {
             get { return _sides[2].Length; }
@@ -27,6 +33,9 @@ namespace FigureArea.Figures
             set { _sides[2].Length = value; }
         }
 
+        /// <param name="sideALength">Length of 1st triangle side</param>
+        /// <param name="sideBLength">Length of 2nd triangle side</param>
+        /// <param name="sideCLength">Length of 3rd triangle side</param>
         public Triangle(double sideALength, double sideBLength, double sideCLength)
         {
             try
@@ -45,6 +54,10 @@ namespace FigureArea.Figures
             }
         }
 
+        /// <summary>
+        /// Check the rightness of a triangle
+        /// </summary>
+        /// <returns>True if triangle is right and false else</returns>
         public bool CheckRightTriangle()
         {
             double sideASqr = Math.Pow(SideALength, 2);
@@ -65,6 +78,11 @@ namespace FigureArea.Figures
             }
         }
 
+
+        /// <summary>
+        /// Calculates the area of the triangle
+        /// </summary>
+        /// <returns>Triangle area</returns>
         public double CalculateArea()
         {
             double semiperimeter = Perimeter() / 2;
