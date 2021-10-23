@@ -1,50 +1,38 @@
 ﻿using System;
 using FigureArea.Base;
+using System.Collections.Generic;
 
 namespace FigureArea.Figures
 {
-    public class Triangle : IFigure
+    class Triangle : Polygon, IFigure
     {
-        private FigureSide _sideA;
         public double SideA
         {
-            get { return _sideA.Length; }
+            get { return _sides[0].Length; }
 
-            set
-            {
-                _sideA.Length = value;
-            }
+            set { _sides[0].Length = value; }
         }
 
-        private FigureSide _sideB;
         public double SideB
         {
-            get { return _sideB.Length; }
+            get { return _sides[1].Length; }
 
-            set
-            {
-                _sideB.Length = value;
-            }
+            set { _sides[1].Length = value; }
         }
 
-        private FigureSide _sideC;
         public double SideC
         {
-            get { return _sideC.Length; }
+            get { return _sides[2].Length; }
 
-            set
-            {
-                _sideC.Length = value;
-            }
+            set { _sides[2].Length = value; }
         }
 
         public Triangle(double sideA, double sideB, double sideC)
         {
             try
             {
-                _sideA = new FigureSide(sideA);
-                _sideB = new FigureSide(sideB);
-                _sideC = new FigureSide(sideC);
+                _sides = new List<FigureSide> 
+                { new FigureSide(sideA), new FigureSide(sideB), new FigureSide(sideC) };
             }
             catch (FigureSideException)
             {
@@ -67,9 +55,9 @@ namespace FigureArea.Figures
             double sigCosB = sideCSqr + sideASqr - sideBSqr;
             double sigCosC = sideASqr + sideBSqr - sideCSqr;
 
-            double epsilon = 0.000000000000001;
+            
 
-            if (Math.Abs(sigCosA) < epsilon || Math.Abs(sigCosB) < epsilon || Math.Abs(sigCosC) < epsilon)
+            if (Math.Abs(sigCosA) < _epsilon || Math.Abs(sigCosB) < _epsilon || Math.Abs(sigCosC) < _epsilon)
             {
                 return true;
             }
@@ -78,10 +66,7 @@ namespace FigureArea.Figures
                 return false;
             }
         }
-        protected double Perimeter()
-        {
-            return SideA + SideB + SideC;
-        }
+
         public double CalculateArea()
         {
             double semiperimeter = Perimeter() / 2;
