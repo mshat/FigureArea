@@ -19,22 +19,15 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="FigureArea.Base.FigureSegmentException" Collapsed="true">
-    <Position X="13" Y="3.25" Width="2" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Base\FigureSegment.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="FigureArea.Base.FigureSegment">
+  <Class Name="FigureArea.Base.LineSegment">
     <Position X="5.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAEAAAAAAAAAAAAABAAAAAAAAABAAAAAAAAAA=</HashCode>
-      <FileName>Base\FigureSegment.cs</FileName>
+      <FileName>Base\LineSegment.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="FigureArea.Base.FigureSideException" Collapsed="true">
-    <Position X="14.25" Y="4.75" Width="1.75" />
+    <Position X="14.5" Y="4.75" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Base\FigureSide.cs</FileName>
@@ -76,6 +69,13 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Base\Radius.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FigureArea.Base.LineSegmentException" Collapsed="true">
+    <Position X="12.5" Y="3.25" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Base\LineSegment.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="FigureArea.Base.IFigure" Collapsed="true">
