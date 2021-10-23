@@ -1,7 +1,4 @@
-﻿using System;
-using FigureArea.Base;
-
-namespace FigureArea.Base
+﻿namespace FigureArea.Base
 {
     public class FigureSideException : FigureSegmentException
     {
@@ -10,7 +7,7 @@ namespace FigureArea.Base
         { }
     }
 
-     class FigureSide : FigureSegment
+    public class FigureSide : FigureSegment
     {
         public FigureSide(double length) : base(length) { }
 

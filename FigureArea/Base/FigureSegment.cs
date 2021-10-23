@@ -9,7 +9,7 @@ namespace FigureArea.Base
         { }
     }
 
-    abstract class FigureSegment
+    public abstract class FigureSegment
     {
         protected double _length;
         public double Length

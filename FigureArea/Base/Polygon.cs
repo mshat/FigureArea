@@ -2,7 +2,7 @@
 
 namespace FigureArea.Base
 {
-    abstract class Polygon
+    public abstract class Polygon
     {
         protected double _epsilon = 1E-15;
 
