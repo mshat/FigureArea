@@ -13,12 +13,12 @@
 * интерфейс IFigure с методом CalculateArea;
 * класс Cirlce : IFigure;
 * класс Triangle : IFigure и его базовый класс Polygon;
-* классы, описывающие то, чем задаются фигуры: Radius и FigureSide, а также их базовый класс FigureSegment;
-* классы исключений: FigureConstructorException, RadiusException, FigureSideException,  FigureSegmentException.
+* классы, описывающие то, чем задаются фигуры: Radius и FigureSide, а также их базовый класс LineSegment;
+* классы исключений: FigureConstructorException, RadiusException, FigureSideException,  LineSegmentException.
 
 Написаны юнит-тесты для большинства методов.
 
-Простота добавления новых геометрических фигур обеспечивается за счёт интерфейса IFigure, классов, описывающих составные части фигур: Radius и FigureSide и базовых классов Polygon, FigureSegment.
+Простота добавления новых геометрических фигур обеспечивается за счёт интерфейса IFigure, классов, описывающих составные части фигур: Radius и FigureSide и базовых классов Polygon, LineSegment.
 
 Вычисление площади фигур без привязки к конкретному типу обеспечивается за счёт реализации классами фигур интерфеса IFigure, описывающего метод для вычисления площади фигуры.
 
