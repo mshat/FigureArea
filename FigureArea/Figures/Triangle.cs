@@ -55,8 +55,6 @@ namespace FigureArea.Figures
             double sigCosB = sideCSqr + sideASqr - sideBSqr;
             double sigCosC = sideASqr + sideBSqr - sideCSqr;
 
-            
-
             if (Math.Abs(sigCosA) < _epsilon || Math.Abs(sigCosB) < _epsilon || Math.Abs(sigCosC) < _epsilon)
             {
                 return true;
