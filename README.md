@@ -2,7 +2,7 @@
 <code>[Учебная работа по бэкенду, Django](https://github.com/mshat/web_project)</code> - мой вклад: бэк, фронт на шаблонах, RestAPI, диаграммы. Контейнеризация, маршрутизация, сервер - коллеги.
 К сожалению, код красотой не блещет, тк всё писалось в спешке.
 
-<code>[Простая работа по бэкенду, Django](https://github.com/mshat/rsoi-simple-perosn-with-api-on-docker)</code> - небольшой бэк с апи, больше для обучения работе с Docker и CI/CD.
+<code>[Простая учебная работа по бэкенду, Django](https://github.com/mshat/rsoi-simple-perosn-with-api-on-docker)</code> - небольшой бэк с апи, больше для обучения работе с Docker и CI/CD.
 
 ### Вопрос 2 - C#
 
